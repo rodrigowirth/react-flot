@@ -1,1 +1,1 @@
-# react-flot
+# ReactFlot
