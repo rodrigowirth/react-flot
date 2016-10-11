@@ -1,6 +1,7 @@
 const cssnext = require('postcss-cssnext');
 const precss = require('precss');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './main.js',
@@ -9,8 +10,14 @@ module.exports = {
     filename: 'index.js',
     publicPath: '/dist/',
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
   extensions: [
-    "", ".js", ".jsx",
+    '', '.js', '.jsx',
   ],
   module: {
     loaders: [
