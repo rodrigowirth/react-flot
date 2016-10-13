@@ -35,7 +35,8 @@ const data = [[
 
 const App = () => (
   <div>
-    <ReactFlot data={data} options={options} />
+    <ReactFlot id="first-chart" data={data} options={options} />
+    <ReactFlot id="second-chart" data={data} options={options} />
   </div>
 );
 

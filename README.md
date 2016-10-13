@@ -7,13 +7,14 @@ import ReactFlot from 'react-flot';
 
 render () {
   return (
-    <ReactFlot options={options} data={data} width="50%" height="100px" />
+    <ReactFlot id="product-chart" options={options} data={data} width="50%" height="100px" />
   );
 }
 
 ```
 
 ## Arguments
+* `@id` is the id of the chart. It is required and must be unique
 * `@options` is the options based on flot documentation
 * `@data` is the data based on flot documentation
 * `@width` is the width of the component (default to 100%)

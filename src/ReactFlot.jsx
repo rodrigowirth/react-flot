@@ -4,14 +4,15 @@ import React, { Component, PropTypes } from 'react';
 
 class ReactFlot extends Component {
   static propTypes = {
-    data: PropTypes.arrayOf.isRequired,
-    options: PropTypes.shape.isRequired,
+    id: PropTypes.string.isRequired,
+    data: PropTypes.isRequired,
+    options: PropTypes.isRequired,
     height: PropTypes.string,
     width: PropTypes.string,
   }
 
   componentDidMount() {
-    $.plot($('#flot-chart-div'), this.props.data, this.props.options);
+    $.plot($(`#${this.props.id}`), this.props.data, this.props.options);
   }
 
   render() {
@@ -21,7 +22,7 @@ class ReactFlot extends Component {
     };
 
     return (
-      <div id="flot-chart-div" style={style} />
+      <div id={this.props.id} style={style} />
     );
   }
 }
