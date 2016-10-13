@@ -14,7 +14,20 @@
     "test:watch": "mocha --watch",
     "test": "mocha"
   },
-  "keywords": [],
+  "contributors": [
+    {
+      "name": "Rodrigo Wirth",
+      "email": "rodrigowirth90@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigowirth/react-flot"
+  },
+  "keywords": [
+    "react",
+    "flot"
+  ],
   "author": "Rodrigo Wirth",
   "license": "MIT",
   "config": {
