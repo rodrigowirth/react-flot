@@ -1,6 +1,7 @@
 import $ from 'jquery';
-import '../flot/jquery.flot';
 import React, { Component, PropTypes } from 'react';
+
+import '../flot/jquery.flot';
 
 class ReactFlot extends Component {
   static propTypes = {
