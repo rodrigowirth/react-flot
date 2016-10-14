@@ -8,8 +8,8 @@ import '../flot/jquery.flot.tooltip';
 class ReactFlot extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    data: PropTypes.array.isRequired,
-    options: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired, // eslint-disable-line
+    options: PropTypes.object.isRequired, //eslint-disable-line
     height: PropTypes.string,
     width: PropTypes.string,
   }
