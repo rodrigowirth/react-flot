@@ -24,6 +24,13 @@ const options = {
   yaxis: {
     max: 10,
   },
+  grid: {
+    hoverable: true,
+  },
+  tooltip: {
+    show: true,
+    content: 'This is a tooltip',
+  },
 };
 
 const data = [[

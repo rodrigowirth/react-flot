@@ -2,6 +2,7 @@ import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 
 import '../flot/jquery.flot';
+import '../flot/jquery.flot.tooltip';
 
 class ReactFlot extends Component {
   static propTypes = {
