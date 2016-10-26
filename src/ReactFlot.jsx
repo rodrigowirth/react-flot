@@ -26,7 +26,7 @@ class ReactFlot extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (!equal(nextProps.data, this.props.data)) {
-      this.draw();
+      this.draw(null, nextProps.data);
     }
   }
 
@@ -38,8 +38,9 @@ class ReactFlot extends Component {
     }
   }
 
-  draw() {
-    $.plot($(`#${this.props.id}`), this.props.data, this.props.options);
+  draw(event, data) {
+    console.log('data ==> ', data);
+    $.plot($(`#${this.props.id}`), data || this.props.data, this.props.options);
   }
 
   render() {
