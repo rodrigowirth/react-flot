@@ -39,7 +39,6 @@ class ReactFlot extends Component {
   }
 
   draw(event, data) {
-    console.log('data ==> ', data);
     $.plot($(`#${this.props.id}`), data || this.props.data, this.props.options);
   }
 
