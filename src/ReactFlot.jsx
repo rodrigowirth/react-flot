@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
+import equal from 'deep-equal';
 
 import '../flot/jquery.flot';
-// import '../flot/jquery.flot.resize';
 import '../flot/jquery.flot.tooltip';
 
 class ReactFlot extends Component {
@@ -21,6 +21,12 @@ class ReactFlot extends Component {
       window.attachEvent('onresize', this.draw.bind(this));
     } else if (window.addEventListener) {
       window.addEventListener('resize', this.draw.bind(this), true);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!equal(nextProps.data, this.props.data)) {
+      this.draw();
     }
   }
 
