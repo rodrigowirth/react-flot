@@ -40,10 +40,27 @@ const data = [[
  [3, 8],
 ]];
 
+const pieData = [
+  { label: 'data1', data: 10 },
+  { label: 'data2', data: 20 },
+  { label: 'data3', data: 30 },
+  { label: 'data4', data: 40 },
+  { label: 'data5', data: 50 },
+  { label: 'data6', data: 60 },
+  { label: 'data7', data: 70 },
+];
+
+const pieOptions = {
+  series: {
+    pie: { show: true },
+  },
+};
+
 const App = () => (
   <div>
     <ReactFlot id="first-chart" data={data} options={options} />
     <ReactFlot id="second-chart" data={data} options={options} />
+    <ReactFlot id="pie-chart" data={pieData} options={pieOptions} />
   </div>
 );
 

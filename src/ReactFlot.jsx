@@ -2,8 +2,9 @@ import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 import equal from 'deep-equal';
 
-import '../flot/jquery.flot';
-import '../flot/jquery.flot.tooltip';
+import '../flot/jquery.flot.min';
+import '../flot/jquery.flot.tooltip.min';
+import '../flot/jquery.flot.pie.min';
 
 class ReactFlot extends Component {
   static propTypes = {
