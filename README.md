@@ -23,7 +23,7 @@ render () {
 * `@height` is the height of the component (default to 400px)
 
 ## Available plugins
-* `Pie Char` from http://www.flotcharts.org/flot/examples/series-pie
+* `Pie Chart` from http://www.flotcharts.org/flot/examples/series-pie
 * `Tooltip` from https://github.com/krzysu/flot.tooltip
 
 ## Contributors
