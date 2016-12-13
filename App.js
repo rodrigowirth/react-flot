@@ -56,8 +56,91 @@ const pieOptions = {
   },
 };
 
+const horizontalData = [
+  {
+    data: [
+      [70, 0],
+    ],
+    color: '#0C4BBB',
+    bars: {
+      align: 'center',
+      show: true,
+      barWidth: 0.4,
+      fill: 1,
+      lineWidth: 0,
+      horizontal: true,
+    },
+  },
+  {
+    data: [
+      [63.37, 1],
+    ],
+    color: '#BB250C',
+    bars: {
+      align: 'center',
+      fill: 0.4,
+      lineWidth: 0,
+      show: true,
+      barWidth: 0.4,
+      horizontal: true,
+    },
+  },
+  {
+    data: [
+      [66.65, 2],
+    ],
+    color: '#BB250C',
+    bars: {
+      align: 'center',
+      fill: 0.8,
+      lineWidth: 0,
+      show: true,
+      barWidth: 0.4,
+      horizontal: true,
+    },
+  },
+  {
+    data: [
+      [99, 3],
+    ],
+    color: '#A2BB0C',
+    bars: {
+      align: 'center',
+      fill: 1,
+      lineWidth: 0,
+      show: true,
+      barWidth: 0.4,
+      horizontal: true,
+    },
+  },
+];
+
+const horizontalOptions = {
+  xaxis: {
+    min: 0,
+    max: 100,
+    tickLength: 0,
+    show: false,
+  },
+  yaxis: {
+    ticks: [
+      [0, 'Target: 70%'],
+      [1, '2013: 63.4%'],
+      [2, '2014: 66.7%'],
+      [3, '2014: 83.3%'],
+    ],
+    show: false,
+    toRight: true,
+    labelPadding: 9,
+    fontSize: '150%',
+    fontColor: 'black',
+    fontFamily: 'Arial',
+  },
+};
+
 const App = () => (
   <div>
+    <ReactFlot id="horizontal-bar-chart" data={horizontalData} options={horizontalOptions} />
     <ReactFlot id="first-chart" data={data} options={options} />
     <ReactFlot id="second-chart" data={data} options={options} />
     <ReactFlot id="pie-chart" data={pieData} options={pieOptions} />

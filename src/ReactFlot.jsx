@@ -2,6 +2,8 @@ import $ from 'jquery';
 import React, { Component, PropTypes } from 'react';
 import equal from 'deep-equal';
 
+import addLabels from './add-labels';
+
 import '../flot/jquery.flot.min';
 import '../flot/jquery.flot.tooltip.min';
 import '../flot/jquery.flot.pie.min';
@@ -40,7 +42,8 @@ class ReactFlot extends Component {
   }
 
   draw(event, data) {
-    $.plot($(`#${this.props.id}`), data || this.props.data, this.props.options);
+    const chart = $.plot($(`#${this.props.id}`), data || this.props.data, this.props.options);
+    addLabels(chart, this.props.options);
   }
 
   render() {
