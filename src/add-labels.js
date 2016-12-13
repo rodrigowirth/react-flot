@@ -1,4 +1,4 @@
-export default function addLabels (chart, options) {
+export default function addLabels(chart, options) {
   if (!options.yaxis || !options.yaxis.toRight) {
     return;
   }
@@ -13,12 +13,11 @@ export default function addLabels (chart, options) {
   ctx.font = `${options.yaxis.fontSize} '${options.yaxis.fontFamily}'`; // set a pretty label font
   ctx.fillStyle = options.yaxis.fontColor;
 
-  for (let i = 0; i < allSeries.length; i++) {
-    const series = allSeries[i];
+  allSeries.forEach((series, index) => {
     const dataPoint = series.datapoints.points; // one point per series
     const x = dataPoint[0];
     const y = dataPoint[1];
-    const text = series.yaxis.options.ticks[i][1];
+    const text = series.yaxis.options.ticks[index][1];
     const metrics = ctx.measureText(text);
 
     const overlap = chartWidth < xaxis.p2c(x) + metrics.width;
@@ -27,5 +26,5 @@ export default function addLabels (chart, options) {
       xaxis.p2c(x) + offset.left + 10; // place after the bar
     const yPos = yaxis.p2c(y) + offset.top + options.yaxis.labelPadding;
     ctx.fillText(text, xPos, yPos);
-  }
+  });
 }
