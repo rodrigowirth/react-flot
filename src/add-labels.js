@@ -10,8 +10,8 @@ export default function addLabels(chart, options) {
   const xaxis = chart.getXAxes()[0]; // xAxis
   const yaxis = chart.getYAxes()[0]; // yAxis
   const offset = chart.getPlotOffset(); // plots offset
-  ctx.font = `${options.yaxis.fontSize} '${options.yaxis.fontFamily}'`; // set a pretty label font
-  ctx.fillStyle = options.yaxis.fontColor;
+  ctx.font = buildFont(options.yaxis.font);
+  ctx.fillStyle = options.yaxis.font.color;
 
   allSeries.forEach((series, index) => {
     const dataPoint = series.datapoints.points; // one point per series
@@ -27,4 +27,8 @@ export default function addLabels(chart, options) {
     const yPos = yaxis.p2c(y) + offset.top + options.yaxis.labelPadding;
     ctx.fillText(text, xPos, yPos);
   });
+}
+
+function buildFont({ family, size, style, variant, weight }) {
+  return `${style} ${variant} ${weight} ${size} '${family}'`;
 }

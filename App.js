@@ -132,9 +132,14 @@ const horizontalOptions = {
     show: false,
     toRight: true,
     labelPadding: 9,
-    fontSize: '150%',
-    fontColor: 'black',
-    fontFamily: 'Arial',
+    font: { // Used when toRight is true
+      color: 'black',
+      family: 'Arial',
+      size: '150%',
+      style: 'italic', // ['normal', 'italic', 'oblique']
+      variant: 'small-caps', // ['normal', 'small-caps']
+      weight: 'bold', // ['normal', 'bold', 'bolder', 'lighter', '100' ... '900']
+    },
   },
 };
 
