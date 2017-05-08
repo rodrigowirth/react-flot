@@ -70,6 +70,7 @@
     "postcss-cssnext": "^2.8.0",
     "postcss-loader": "^0.13.0",
     "precss": "^1.4.0",
+    "prop-types": "^15.5.8",
     "react-addons-test-utils": "^15.3.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
