@@ -8,6 +8,7 @@ import addLabels from './add-labels';
 import '../flot/jquery.flot.min';
 import '../flot/jquery.flot.tooltip.min';
 import '../flot/jquery.flot.pie.min';
+import '../flot-override/jquery.flot.resize';
 
 class ReactFlot extends Component {
   static propTypes = {
@@ -20,25 +21,11 @@ class ReactFlot extends Component {
 
   componentDidMount() {
     this.draw();
-
-    if (window.attachEvent) {
-      window.attachEvent('onresize', this.draw.bind(this));
-    } else if (window.addEventListener) {
-      window.addEventListener('resize', this.draw.bind(this), true);
-    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (!equal(nextProps.data, this.props.data)) {
       this.draw(null, nextProps.data);
-    }
-  }
-
-  componentWillUnmount() {
-    if (window.attachEvent) {
-      window.detachEvent('onresize', this.draw.bind(this));
-    } else if (window.addEventListener) {
-      window.removeEventListener('resize', this.draw.bind(this), true);
     }
   }
 

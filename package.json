@@ -30,12 +30,6 @@
   ],
   "author": "Rodrigo Wirth",
   "license": "MIT",
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run clean"
-    }
-  },
   "peerDependencies": {
     "jsdom": "^9.6.0",
     "react": ">= 0.14.x",

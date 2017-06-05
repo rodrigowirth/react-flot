@@ -1,3 +1,7 @@
+function buildFont({ family, size, style, variant, weight }) {
+  return `${style} ${variant} ${weight} ${size} '${family}'`;
+}
+
 export default function addLabels(chart, options) {
   if (!options.yaxis || !options.yaxis.toRight) {
     return;
@@ -27,8 +31,4 @@ export default function addLabels(chart, options) {
     const yPos = yaxis.p2c(y) + offset.top + options.yaxis.labelPadding;
     ctx.fillText(text, xPos, yPos);
   });
-}
-
-function buildFont({ family, size, style, variant, weight }) {
-  return `${style} ${variant} ${weight} ${size} '${family}'`;
 }
