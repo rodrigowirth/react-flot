@@ -43,5 +43,14 @@ render () {
 * `Tooltip` from https://github.com/krzysu/flot.tooltip
 * `Resize` from http://www.flotcharts.org/flot/examples/resize/index.html
 
+## Using other plugins
+If you want other plugins it is possible to import them.
+```javascript
+require('../node_modules/react-flot/flot/jquery.flot.time.min');
+// OR
+import '../node_modules/react-flot/flot/jquery.flot.time.min';
+
+```
+
 ## Contributors
 Would you like to contribute to this library? Don't be shy! [Contact me](mailto:rodrigowirth90@gmail.com) if you are interested on it.
