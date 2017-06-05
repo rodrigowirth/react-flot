@@ -25,6 +25,7 @@ render () {
 ## Available plugins
 * `Pie Chart` from http://www.flotcharts.org/flot/examples/series-pie
 * `Tooltip` from https://github.com/krzysu/flot.tooltip
+* `Resize` from http://www.flotcharts.org/flot/examples/resize/index.html
 
 ## Contributors
 Would you like to contribute to this library? Don't be shy! [Contact me](mailto:rodrigowirth90@gmail.com) if you are interested on it.
