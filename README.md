@@ -3,6 +3,22 @@ ReactFlot - A react component for using Flot
 
 For information about Flot library [go here](http://www.flotcharts.org/).
 
+## Requirements
+It is required to have jQuery available. If you are using webpack, it is possible to provide jQuery using a plugin.
+
+```javascript
+module.exports = {
+  ...
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
+  ...
+}
+```
+
 ## Usage
 ```javascript
 import ReactFlot from 'react-flot';
