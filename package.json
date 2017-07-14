@@ -3,6 +3,7 @@
   "version": "1.1.1",
   "description": "",
   "main": "index.js",
+  "types": "./src/ReactFlot.d.ts",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --port 3000",
     "compile": "npm-run-all --parallel compile:source compile:postcss",
@@ -67,11 +68,13 @@
     "prop-types": "^15.5.8",
     "react-addons-test-utils": "^15.3.2",
     "style-loader": "^0.13.1",
+    "typescript": "^2.4.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "@types/react": "^15.0.38",
     "deep-equal": "^1.0.1",
     "jquery": "^3.1.1"
   }
