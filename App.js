@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactFlot from './src/ReactFlot.jsx';
 
 const options = {
@@ -143,13 +143,43 @@ const horizontalOptions = {
   },
 };
 
-const App = () => (
-  <div>
-    <ReactFlot id="horizontal-bar-chart" data={horizontalData} options={horizontalOptions} />
-    <ReactFlot id="first-chart" data={data} options={options} />
-    <ReactFlot id="second-chart" data={data} options={options} />
-    <ReactFlot id="pie-chart" data={pieData} options={pieOptions} />
-  </div>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [[
+       [0, 4],
+       [1, 6],
+       [2, 3],
+       [3, 8],
+      ]],
+    };
+  }
+
+  onButtonClick = () => {
+    this.setState({
+      data: [[
+       [0, 10],
+       [1, 5],
+       [2, 2],
+       [3, 1],
+      ]],
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={::this.onButtonClick}>
+          Update Data
+        </button>
+        <ReactFlot id="horizontal-bar-chart" data={horizontalData} options={horizontalOptions} />
+        <ReactFlot id="first-chart" data={this.state.data} options={options} />
+        <ReactFlot id="second-chart" data={this.state.data} options={options} />
+        <ReactFlot id="pie-chart" data={pieData} options={pieOptions} />
+      </div>
+    );
+  }
+}
 
 export default App;
