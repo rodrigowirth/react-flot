@@ -24,14 +24,16 @@ class ReactFlot extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!equal(nextProps.data, this.props.data)) {
-      this.draw(null, nextProps.data);
+    if (!equal(nextProps.data, this.props.data) || !equal(nextProps.options, this.props.options)) {
+      this.draw(null, nextProps);
     }
   }
 
-  draw(event, data) {
-    const chart = $.plot($(`#${this.props.id}`), data || this.props.data, this.props.options);
-    addLabels(chart, this.props.options);
+  draw(event, nextProps) {
+    const data = (nextProps && nextProps.data) || this.props.data;
+    const options = (nextProps && nextProps.options) || this.props.options;
+    const chart = $.plot($(`#${this.props.id}`), data, options);
+    addLabels(chart, options);
   }
 
   render() {
